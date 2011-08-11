@@ -1,0 +1,58 @@
+Copyright (C) Juan Miguel Cejuela <juanmi@jmcejuela.com>
+
+--------------------------------------------------------------------------------
+clTMHMM: TMHMM-based TM Protein Topology Predictor in CL
+--------------------------------------------------------------------------------
+
+Compatibility: ANSI Common Lisp. Any SO
+Dependencies: jmc.cl.utils, cl-hmm
+Originally Created:    Wed Jul  9 18:18:18 2008 (CEST)
+Last Effective Update: Mon Sep 22 11:11:22 2008 (CEST)
+
+
+
+
+Description:
+--------------------------------------------------------------------------------
+
+Simple Transmembrane Protein Topology Predictor modeled with
+a Hidden Markov Model and written in Common Lisp.
+
+Constructed after the TMHMM 1.0 architecture by Krogh et
+al. in 2001 which was a huge advance in the time it
+appeared. In the last couple of years others predictors have
+been created or improved, with special attention to TMHMM 2.0
+(and the newest Phobius), PRODIV-HMM, HMMTOP 2.0, or
+PHDhtm. Results yielded with this predictor are comparable
+to the former model.
+
+Program created to show the capabilities of the CL-HMM
+library in a work of computer science rather than
+bioinformatics. Several improvements could be achieved taking
+into account last insights in the field.
+
+
+
+Features:
+--------------------------------------------------------------------------------
+ - Use of a HMM following the TMHMM 1.0 model.
+ - No signal peptides are modeled nor treated.
+
+
+Files Definition:
+--------------------------------------------------------------------------------
+	cltmhmm.asd: System definer
+
+	packages: package definer
+
+	cltmhmm: model and base
+
+	predictor: functions to predict a topology
+
+	accuracy-validation: given the real topology, check the
+			     accuracy of the predicted one
+
+	other-results-interpreter: interpreter for other predictors:
+				   -TMHMM 1.0, 2.0, Phobius, and
+				   derived
+
